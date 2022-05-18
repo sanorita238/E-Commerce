@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Public/CSS/landingpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href="./cart.html">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link href="./landingpage.html">
+   
+    <title>E-Commerce Webiste</title>
+</head>
+<body>
+
+<!-- NAVBAR STARTS HERE -->
+    <nav class="navbar landingpage navbar-expand-lg navbar-light">
+        <a class="navbar-brand nav-text" href="#">E-Commerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse form-div" id="navbarSupportedContent">
+          <form class="form-inline ml-auto">
+            <input class="searchbar form-control mr-sm-2" type="search" placeholder="Search clothing here" aria-label="Search">
+            <button class="search btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+           <a href="./card.html"><i class="fas fa-shopping-cart cart"></i></a> 
+          </form>
+        </div>
+      </nav>
+      <!-- NAVBAR ENDS HERE -->
+
+      <!-- MID PIC -->
+      <div style="
+    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.8; */
+    height: 150vh;
+    margin-bottom: 20px;
+  "></div>
+<!-- MID PIC ENDS -->
+
+      <!-- CENTRAL DIV STARTS -->
+      <div class="container-fluid">
+
+
+        <div class="container align-items-center">
+                <div class="row">
+                    <!-- Card starts here -->
+                    <!-- //isko krrrhe abhi bs local storage ka baad mai change rest -->
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/w1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Jeans</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Jeans" onclick=saveItem(this.id)>Jeans</button>
+                        </div>
+                      </div>
+                </div>
+                <!-- card ends here -->
+
+
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top mx-auto d-block"src="./Public/IMG/w2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title onepiece">One piece</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Onepice" onclick=saveItem(this.id)>One piece</button>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top " src="./Public/IMG/w3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title kurti">Kurti</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Kurti" onclick=saveItem(this.id)>Kurti</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/m1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title denim">Denim</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Denim" onclick=saveItem(this.id)>Denim</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/m2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title jacket">Jacket</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Jacket" onclick=saveItem(this.id)>Jacket</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/m3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title kurta">Kurta</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Kurta" onclick=saveItem(this.id)>Kurta</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/k1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title tshirts">T-shirts</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Tshirts" onclick=saveItem(this.id)>T-shirts</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/k2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title kidscombo">Kids Combo Pack</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="KidsCombo" onclick=saveItem(this.id)>Kids Combo Pack</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="card col-xs-12 col-md-4 col-sm-2">
+                    <div>
+                        <img class="card-img-top" src="./Public/IMG/k3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title shorts">Shorts</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <button class="btn btn-primary cartadded" id="Shorts" onclick=saveItem(this.id)>Shorts</button>
+                        </div>
+                      </div>
+                </div>
+        </div>
+</div>
+
+      </div>
+
+      
+<!-- CENTRAL DIV ENDS -->
+
+<!-- FOTTER STARTS HERE -->
+<!-- Footer -->
+<!-- Footer -->
+<footer class="fotter text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="rounded-circle btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a class="rounded-circle btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a class="rounded-circle btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a class="rounded-circle btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a class="rounded-circle btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="rounded-circle btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+  
+     
+  
+      <!-- Section: Text -->
+      <section class="mb-4">
+      
+      </section>
+      <!-- Section: Text -->
+  
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">E-Commerce</h5>
+            <p>
+                Our company mission is to sell the product at feasable price and with god quality.
+              </p>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">MEN</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">T-Shirts</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Jeans</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Sweetshirt</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Shoes</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">WOMEN</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">T-Shirts</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Jeans</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Shorts</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Leggings</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">KIDS</h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Combo Pack</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Shorts</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">T-Shirts</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Pants</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">E-Commerce</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <!-- Footer -->
+
+<!-- FOTTER ENDS HERE -->
+
+<!-- -------BOOTSTRAP CDN --- -->
+<script src="/Public/JS/landingpage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
