@@ -5,13 +5,33 @@ body{
 .head{
     color: white !important;
 }
+#checkedoutt{
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+
+}
+.hiddentop{
+    margin-top:30px;
+    margin-bottom:30px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#trashh{
+    float: right !important;
+}
 .landingpage{
     background-color: black;
     /* border-bottom: 2px solid rgb(88, 84, 84); */
 
 }
-
-
+#checkout{
+    margin-top: 10px;
+}
+.btnn{
+    color: white !important;
+}
 .full {
     background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
     background-repeat: no-repeat;

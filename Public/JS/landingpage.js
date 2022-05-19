@@ -12,6 +12,17 @@ function saveItem(clicked_id){
     confirm("Item added in cart successfully!")
 }
 
+//adding clothes to map 
+var itemStore = new Map();
+var obj = JSON.parse(localStorage.getItem("clothes"));
+for(var i=0;i<obj.length;i++){
+    const vall = obj[i];
+    itemStore.set(vall, (itemStore.get(vall) ?? 0) + 1)
+    console.log(vall);
+}
+console.log(itemStore.size);
+
+
 // Function to show cart items
 function displayDetails(){
     
@@ -27,12 +38,17 @@ function displayDetails(){
     }
 }
 
+function checkClick(idd){
+    idd.onclick = function(){
+        localStorage.clear();
+        alert('You have successfully checked out!')
+    }
+}
 //Function to display cart items
 function showCartItems(){
     var ele = document.getElementsByClassName("innercontainer");
-    //breaking the json in string format and looping it
-    var obj = JSON.parse(localStorage.getItem("clothes"));
-    for (var i = 0; i < obj.length; i++){
+ //looping the map and adding items in cart
+    for (const [key, value] of itemStore.entries()){
         //creating div element
         let CountDiv = document.createElement('div')
             CountDiv.id= "CountDiv";
@@ -41,7 +57,7 @@ function showCartItems(){
             CountDiv.style.background="white"
             CountDiv.style. marginTop = "10px";
             CountDiv.style.marginBottom = "10px";
-            const val = obj[i];
+            const val = key;
             var eleAdd = val;
             if(val == "Onepice"){
                 eleAdd = "One Piece";
@@ -84,11 +100,12 @@ function showCartItems(){
             if(eleAdd == "Shorts"){
                 img.src="./Public/IMG/k3.jpg";
             }
-            
+            const addItem = eleAdd + " " + value;
+            // + '<i class="fa fa-trash" id="trashh" aria-hidden="true"></i>'
             let textSpan=document.createElement("span")
             textSpan.id = "Count"
             textSpan.style.padding="10px"
-            textSpan.innerHTML=eleAdd;
+            textSpan.innerHTML=addItem;
             CountDiv.append(img);
             CountDiv.append(textSpan);
             CountDiv.style.display ="flex";
@@ -97,9 +114,20 @@ function showCartItems(){
              //appending to existing div
             ele[0].appendChild(CountDiv); //ele.appendChild(p) won't work so use ele[0].appendChild(p)
         }
+
+        //creating checkout button
+        var checkOutButton = document.createElement("button");
+        checkOutButton.id = 'checkedoutt'
+        checkOutButton.className = 'btn btn-primary';
+        checkOutButton.innerHTML = "Check Out";
+        var add = document.getElementsByClassName('ending');
+        add[0].appendChild(checkOutButton);
+
+        //if checkout clear the local storage
+        var chk = document.getElementById('checkedoutt');
+        checkClick(chk);
         
 }
-
 
 
 
