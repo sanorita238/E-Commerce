@@ -14,7 +14,7 @@ function saveItem(clicked_id){
 
 // Function to show cart items
 function displayDetails(){
-
+    
     let getName = document.getElementById('name');
     let getAddress = document.getElementById('address');
 
