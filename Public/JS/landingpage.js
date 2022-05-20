@@ -38,14 +38,18 @@ function displayDetails(){
     }
 }
 
-function checkClick(idd){
+function checkClick(idd, totalPrice){
     idd.onclick = function(){
         localStorage.clear();
-        alert('You have successfully checked out!')
+        if(alert('Your total amount is ' + totalPrice + '. Thank you for shopping!')){
+            // document.location = './landingpage.html';
+        }
+
     }
 }
 //Function to display cart items
 function showCartItems(){
+    var totalPrice = 0;
     var ele = document.getElementsByClassName("innercontainer");
  //looping the map and adding items in cart
     for (const [key, value] of itemStore.entries()){
@@ -58,6 +62,7 @@ function showCartItems(){
             CountDiv.style. marginTop = "10px";
             CountDiv.style.marginBottom = "10px";
             const val = key;
+            var price = 0;
             var eleAdd = val;
             if(val == "Onepice"){
                 eleAdd = "One Piece";
@@ -75,42 +80,60 @@ function showCartItems(){
             img.setAttribute("width", "76.8");
             if(eleAdd == "Jeans"){
                 img.src="./Public/IMG/w1.jpg";
+                price += (value*2000);
             }
             else if(eleAdd == "One Piece"){
                 img.src="./Public/IMG/w2.jpg";
+                price += (value*800);
             }
             if(eleAdd == "Kurti"){
                 img.src="./Public/IMG/w3.jpg";
+                price += (value*700);
             }
             if(eleAdd == "Denim"){
                 img.src="./Public/IMG/m1.jpg";
+                price += (value*1000);
             }
             if(eleAdd == "Jacket"){
                 img.src="./Public/IMG/m2.jpg";
+                price += (value*550);
             }
             if(eleAdd == "Kurta"){
                 img.src="./Public/IMG/m3.jpg";
+                price += (value*500);
             }
             if(eleAdd == "T-Shirts"){
                 img.src="./Public/IMG/k1.jpg";
+                price += (value*300);
             }
             if(eleAdd == "Kids Combo Pack"){
                 img.src="./Public/IMG/k2.jpg";
+                price += (value*600);
             }
             if(eleAdd == "Shorts"){
                 img.src="./Public/IMG/k3.jpg";
+                price += (value*300);
             }
-            const addItem = eleAdd + " " + value;
+            const addItem = eleAdd;
+            // let text1 = value;
             // + '<i class="fa fa-trash" id="trashh" aria-hidden="true"></i>'
             let textSpan=document.createElement("span")
+            let textValue = document.createElement("span")
+            let priceValue = document.createElement("span")
+            textValue.innerHTML = value;
+            priceValue = price;
+            priceValue.className = "pricetag"
+            textValue.className = "quantity"
             textSpan.id = "Count"
             textSpan.style.padding="10px"
             textSpan.innerHTML=addItem;
             CountDiv.append(img);
             CountDiv.append(textSpan);
+            CountDiv.append(textValue);
+            CountDiv.append(priceValue);
             CountDiv.style.display ="flex";
             CountDiv.style.alignItems="center";
-
+            totalPrice+=price;
              //appending to existing div
             ele[0].appendChild(CountDiv); //ele.appendChild(p) won't work so use ele[0].appendChild(p)
         }
@@ -120,12 +143,16 @@ function showCartItems(){
         checkOutButton.id = 'checkedoutt'
         checkOutButton.className = 'btn btn-primary';
         checkOutButton.innerHTML = "Check Out";
+        var amount = document.createElement('span');
+        amount.id = 'amountt';
+        amount.innerHTML = 'Total amount: ' + totalPrice;
         var add = document.getElementsByClassName('ending');
         add[0].appendChild(checkOutButton);
+        add[0].appendChild(amount);
 
         //if checkout clear the local storage
         var chk = document.getElementById('checkedoutt');
-        checkClick(chk);
+        checkClick(chk, totalPrice);
         
 }
 
